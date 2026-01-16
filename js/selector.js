@@ -2,7 +2,7 @@
 // SELECTOR DE FOTOS - XV ANOS SOFIA MARLEN
 // ========================================
 // CONFIGURACION: Cambia este numero segun las fotos que tengas
-const TOTAL_PHOTOS = 100; // <-- CAMBIA ESTE NUMERO AL TOTAL DE FOTOS
+const TOTAL_PHOTOS = 175; // <-- CAMBIA ESTE NUMERO AL TOTAL DE FOTOS
 
 const STORAGE_KEY = 'sofia_marlen_xv_photo_selections';
 const FEEDBACK_KEY = 'sofia_marlen_xv_feedback';
