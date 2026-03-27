@@ -20,7 +20,7 @@ const LIMITS = {
 
 let photoSelections = {};
 let currentPhotoIndex = null;
-let currentFilter = 'all';
+let currentFilter = 'impresion';
 
 // ========================================
 // LOCAL STORAGE FUNCTIONS

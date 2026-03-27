@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pre-cargar Selección - Sofia Marlen XV</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #ad1457; color: white; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .box { background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; text-align: center; max-width: 500px; }
+        h2 { margin-bottom: 10px; }
+        p { margin-bottom: 25px; color: #fce4ec; }
+        button { background: #d4af37; color: #4a1942; border: none; padding: 15px 35px; font-size: 1.1rem; font-weight: bold; border-radius: 25px; cursor: pointer; }
+        button:hover { background: #f5e6c3; }
+        .result { margin-top: 20px; font-size: 1rem; color: #fce4ec; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>Pre-cargar Selección</h2>
+    <p>Cargará 83 fotos marcadas como <strong>Impresión</strong> en el selector.</p>
+    <button onclick="precargar()">Cargar Selección</button>
+    <div class="result" id="resultado"></div>
+</div>
+<script>
+const STORAGE_KEY = 'sofia_marlen_xv_photo_selections';
+
+const seleccionadas = [2,3,5,7,11,15,26,27,28,29,30,31,32,33,35,37,38,39,40,41,42,44,45,50,51,52,53,54,57,59,60,61,66,68,74,77,78,79,80,81,82,83,84,89,99,102,103,104,105,106,118,119,127,128,131,132,133,134,135,136,137,139,140,143,149,150,151,153,155,157,158,159,160,161,162,163,164,166,167,170,171,174,175];
+
+function precargar() {
+    const data = {};
+    seleccionadas.forEach(n => {
+        const key = `photos/foto_${String(n).padStart(3,'0')}.webp`;
+        data[key] = { impresion: true };
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    document.getElementById('resultado').innerHTML =
+        '✓ ' + seleccionadas.length + ' fotos cargadas como Impresión.<br><a href="index.html" style="color:#d4af37;">Ir al Selector →</a>';
+}
+</script>
+</body>
+</html>
